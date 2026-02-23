@@ -143,3 +143,71 @@
           }  
         
         });
+
+    // jobs card information collection 
+
+    mainContainer.addEventListener('click', (event)=>{
+        if(event.target.classList.contains('interview-btn')){
+         let parent = event.target.parentNode.parentNode.parentNode;
+         let companyName = parent.querySelector('.company-name').innerText;
+         let position = parent.querySelector('.position').innerText;
+         let location = parent.querySelector('.location').innerText;
+         let salary = parent.querySelector('.salary').innerText;
+         let status = parent.querySelector('.status').innerText;
+         let description = parent.querySelector('.description').innerText;
+        console.log(status);
+        // console.log(companyName,position,location,salary,status,description);
+         parent.querySelector('.status').innerText = 'interview';
+          parent.querySelector('.status').className = 'status border-1 border-green-400 text-green-500 px-4 py-2 bg-gray-100 font-bold';
+        let cardInfo = {
+            companyName,
+            position,
+            location,
+            salary,
+            status:'interview',
+            description
+        }
+      let existingItem = interviewArray.find( item => item.companyName === cardInfo.companyName);
+          
+       if(!existingItem){
+        interviewArray.push(cardInfo);
+       }
+    rejectedArray = rejectedArray.filter( item => item.companyName != cardInfo.companyName);
+      if( currentStatus == 'reject-button'){
+        rejectRander();
+      }
+       counter();
+
+        } 
+         else if(event.target.classList.contains('rejected-btn')){
+         let parent = event.target.parentNode.parentNode.parentNode;
+         let companyName = parent.querySelector('.company-name').innerText;
+         let position = parent.querySelector('.position').innerText;
+         let location = parent.querySelector('.location').innerText;
+         let salary = parent.querySelector('.salary').innerText;
+         let status = parent.querySelector('.status').innerText;
+         let description = parent.querySelector('.description').innerText;
+        console.log(status);
+        // console.log(companyName,position,location,salary,status,description);
+         parent.querySelector('.status').innerText = 'reject';
+          parent.querySelector('.status').className = 'status border-1 border-red-400 text-red-500 px-4 py-2 bg-gray-100 font-bold';
+        let cardInfo = {
+            companyName,
+            position,
+            location,
+            salary,
+            status:'reject',
+            description
+        }
+      let existingItem = rejectedArray.find( item => item.companyName === cardInfo.companyName);
+
+       if(!existingItem){
+        rejectedArray.push(cardInfo);
+       }
+       interviewArray = interviewArray.filter( item => item.companyName != cardInfo.companyName);
+      if( currentStatus == 'interview-button'){
+        interviewRander();
+      }
+       counter();
+        }
+    })
