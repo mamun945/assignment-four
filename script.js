@@ -81,3 +81,16 @@
          }
 
         allJobsCardCounter();
+
+        // jobs card delete section 
+              mainContainer.addEventListener('click', (event)=>{
+                if(event.target.id == 'delete-btn'){
+                    let parent = event.target.parentNode.parentNode;
+                    parent.remove();
+                    allJobsCardCounter();
+                }
+                if(!allJobsCards.children.length){
+                     noJobsAvailable.classList.remove('hidden');
+                }
+               
+           })
