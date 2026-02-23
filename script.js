@@ -102,3 +102,23 @@
             rejectedJobs.innerText  = rejectedArray.length;
             rejectedJobsCount.innerText = rejectedArray.length;
           }
+
+     // interview section theke card delete 
+        mainContainer.addEventListener('click', (event)=>{
+          if( currentStatus == 'interview-button'){
+            if(event.target.id == 'delete-btn'){
+              let parent = event.target.parentNode.parentNode;
+              let companyName = parent.querySelector('.company-name').innerText;
+              let existingItem = interviewArray.findIndex( item => item.companyName == companyName);
+              interviewArray.splice(existingItem, 1);
+              parent.remove();
+              counter();
+              if(!interviewArray.length){
+                noJobsAvailable.classList.remove('hidden');
+             }else{
+                noJobsAvailable.classList.add('hidden');
+             }
+            }
+          }  
+        
+        });
