@@ -122,3 +122,24 @@
           }  
         
         });
+
+
+        //    reject section theke card delete
+      mainContainer.addEventListener('click', (event)=>{
+          if( currentStatus == 'reject-button'){
+            if(event.target.id == 'delete-btn'){
+              let parent = event.target.parentNode.parentNode;
+              let companyName = parent.querySelector('.company-name').innerText;
+              let existingItem = rejectedArray.findIndex( item => item.companyName == companyName);
+              rejectedArray.splice(existingItem, 1);
+              parent.remove();
+              counter();
+              if(!rejectedArray.length){
+                noJobsAvailable.classList.remove('hidden');
+             }else{
+                noJobsAvailable.classList.add('hidden');
+             }
+            }
+          }  
+        
+        });
