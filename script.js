@@ -69,3 +69,15 @@
            }
            
          }
+
+
+           function allJobsCardCounter(){
+            let numberOfJobs = allJobsCards.children.length;
+             allJobsCount.innerText = numberOfJobs;
+             totalJobsCount.innerText = numberOfJobs;
+            if(!allJobsCards.children.length){
+                noJobsAvailable.classList.remove('hidden');
+            }
+         }
+
+        allJobsCardCounter();
