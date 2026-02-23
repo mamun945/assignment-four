@@ -91,6 +91,12 @@
                 }
                 if(!allJobsCards.children.length){
                      noJobsAvailable.classList.remove('hidden');
+                     interviewArray.length = 0;
+                     rejectedArray.length = 0;
+                     interviewJobs.innerText = interviewArray.length;
+                     rejectedJobs.innerText =  rejectedArray.length;
+                     interviewJobsCount.innerText = interviewArray.length;
+                     rejectedJobsCount.innerText = rejectedArray.length;
                 }
                
            })
@@ -155,7 +161,7 @@
          let salary = parent.querySelector('.salary').innerText;
          let status = parent.querySelector('.status').innerText;
          let description = parent.querySelector('.description').innerText;
-        console.log(status);
+    
         // console.log(companyName,position,location,salary,status,description);
          parent.querySelector('.status').innerText = 'interview';
           parent.querySelector('.status').className = 'status border-1 border-green-400 text-green-500 px-4 py-2 bg-gray-100 font-bold';
@@ -187,7 +193,7 @@
          let salary = parent.querySelector('.salary').innerText;
          let status = parent.querySelector('.status').innerText;
          let description = parent.querySelector('.description').innerText;
-        console.log(status);
+       
         // console.log(companyName,position,location,salary,status,description);
          parent.querySelector('.status').innerText = 'reject';
           parent.querySelector('.status').className = 'status border-1 border-red-400 text-red-500 px-4 py-2 bg-gray-100 font-bold';
