@@ -93,10 +93,10 @@
                      noJobsAvailable.classList.remove('hidden');
                      interviewArray.length = 0;
                      rejectedArray.length = 0;
-                     interviewJobs.innerText = interviewArray.length;
-                     rejectedJobs.innerText =  rejectedArray.length;
-                     interviewJobsCount.innerText = interviewArray.length;
-                     rejectedJobsCount.innerText = rejectedArray.length;
+                     interviewJobs.innerText = 0;
+                     rejectedJobs.innerText =  0;
+                     interviewJobsCount.innerText = 0;
+                     rejectedJobsCount.innerText = 0;
                 }
                
            })
