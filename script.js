@@ -94,3 +94,11 @@
                 }
                
            })
+
+        //    interview and reject jobs counter
+      function counter(){
+            interviewJobs.innerText = interviewArray.length;
+            interviewJobsCount.innerText = interviewArray.length
+            rejectedJobs.innerText  = rejectedArray.length;
+            rejectedJobsCount.innerText = rejectedArray.length;
+          }
