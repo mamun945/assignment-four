@@ -62,7 +62,7 @@ Event bubbling means that when an event occurs on an element, it first executes 
 
 if i add addEventListener both element and if i click p element first i get child element then i will get parent; why it occure? it for bubbling
 
-### 3. What is Event Bubbling? And how does it work?
+### 4. What is Event Delegation in JavaScript? Why is it useful?
 
 Ans: 
 event delegation is i can use event listener in parent by event bubbling i can handle all child elements smoothly.
