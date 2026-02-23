@@ -22,3 +22,50 @@
         let allButton = document.querySelector('#all-button');
         let interviewButton = document.querySelector('#interview-button');
         let rejectedButton = document.querySelector('#reject-button');
+
+
+        function change(id){
+            currentStatus = id;
+           allButton.classList.remove('bg-[#3B82F6]', 'text-white');
+           interviewButton.classList.remove('bg-[#3B82F6]', 'text-white');
+          rejectedButton.classList.remove('bg-[#3B82F6]', 'text-white');
+
+          allButton.classList.add('bg-gray-100', 'text-black');
+           interviewButton.classList.add('bg-gray-100', 'text-black');
+          rejectedButton.classList.add('bg-gray-100', 'text-black');
+
+          let selected = document.getElementById(id);
+          selected.classList.remove('bg-gray-100', 'text-black');
+          selected.classList.add('bg-[#3B82F6]', 'text-white');
+
+           if(id == 'interview-button'){
+             allJobsCards.classList.add('hidden');
+             filterSection.classList.remove('hidden');
+             interviewDiv.classList.remove('hidden');
+             rejectedDiv.classList.add('hidden');
+             interviewRander();
+             if(!interviewArray.length){
+                noJobsAvailable.classList.remove('hidden');
+             }else{
+                noJobsAvailable.classList.add('hidden');
+             }
+           }else if(id == 'all-button'){
+             allJobsCards.classList.remove('hidden');
+             filterSection.classList.add('hidden');
+             interviewDiv.classList.add('hidden');
+             rejectedDiv.classList.add('hidden');
+             noJobsAvailable.classList.add('hidden');
+           }else if(id = 'reject-button'){
+            allJobsCards.classList.add('hidden');
+             filterSection.classList.remove('hidden');
+             interviewDiv.classList.add('hidden');
+             rejectedDiv.classList.remove('hidden');
+               rejectRander();
+              if(!rejectedArray.length){
+                noJobsAvailable.classList.remove('hidden');
+             }else{
+                noJobsAvailable.classList.add('hidden');
+             }
+           }
+           
+         }
