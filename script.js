@@ -244,3 +244,35 @@
         });
      
     }
+
+    // for rejected rander
+
+     function  rejectRander(){
+        filterSection.innerHTML ='';
+         rejectedArray.forEach( item =>{
+            let div = document.createElement('div');
+            div.className = 'border-1  hover:shadow-md hover:shadow-orange-500 rounded-md p-8 flex justify-between';
+            div.innerHTML = `
+              <div class="text space-y-4">
+                    <div>
+                        <h2 class="company-name font-bold text-xl">${item.companyName}</h2>
+                        <p class="position text-[gray]">${item.position}</p>
+                    </div>
+                    <p class="text-[gray]"><span class="location">${item.location}</span> • Full-time • <span class="salary">${item.salary}</span></p>
+                    <div>
+                        <button class="status border-1 border-red-400 text-red-500 px-4 py-2 bg-gray-100 font-bold">${item.status}</button>
+                        <p class="description mt-2">${item.description}</p>
+                    </div>
+                    <div class="interview-reject-button flex gap-6">
+                        <button class="interview-btn border-2 border-green-400 text-green-500 px-4 py-2 font-semibold rounded-md">INTERVIEW</button>
+                        <button class="rejected-btn border-2 border-red-400 text-red-500 px-4 py-2 font-semibold rounded-md"">REJECTED</button>
+                    </div>
+                </div>
+                <div class="delete-btn">
+                  <i id="delete-btn" class="fa-solid fa-trash-can text-2xl"></i>
+                </div>
+            `;
+            filterSection.appendChild(div);
+        });
+     
+    }
